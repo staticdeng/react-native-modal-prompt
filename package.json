@@ -1,7 +1,7 @@
 {
   "name": "react-native-modal-prompt",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "react-native-modal-prompt, a cross-platform prompt component for React Native",
   "main": "index.js",
   "directories": {
     "example": "example"
@@ -9,6 +9,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzfrontend/react-native-modal-prompt.git"
+  },
+  "keywords": [
+    "prompt",
+    "react-prompt",
+    "react-native-prompt",
+    "react-native-modal-prompt"
+  ],
+  "author": "dzfrontend",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dzfrontend//react-native-modal-prompt/issues"
+  },
+  "homepage": "https://github.com/dzfrontend//react-native-modal-prompt#readme"
 }

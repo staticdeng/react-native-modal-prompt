@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ToastAndroid } from 'react-native';
-// import Prompt from 'react-native-modal-prompt';
-import Prompt from './src/Prompt';
+import Prompt from 'react-native-modal-prompt';
 
 class App extends Component {
     constructor(props) {
