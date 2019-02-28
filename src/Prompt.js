@@ -26,7 +26,7 @@ class Prompt extends Component {
         value: this.props.defaultValue,
     }
     componentWillReceiveProps = (nextProps) => {
-        this.setState({ visible: nextProps.visible });
+        this.setState({ visible: nextProps.visible, value: nextProps.defaultValue });
     }
 
     requestClose = () => {
@@ -34,7 +34,7 @@ class Prompt extends Component {
     }
     operationPress = async (fn) => {
         const bool = fn && await fn(this.state.value);
-        if(bool !== false) {
+        if (bool !== false) {
             this.setState({ visible: false });
         }
     }
@@ -43,7 +43,6 @@ class Prompt extends Component {
     }
     renderPromet = () => {
         const { title, defaultValue, placeholder, operation, showCount, maxLength } = this.props;
-
         return (
             <View style={styles.prompt}>
                 <View style={styles.promptMask}></View>
@@ -65,7 +64,7 @@ class Prompt extends Component {
                             showCount
                             &&
                             <View style={styles.textCount}>
-                                <Text>{this.state.value.length}</Text><Text>/</Text><Text>{maxLength}</Text>
+                                <Text>{this.state.value.length > maxLength ? maxLength : this.state.value.length}</Text><Text>/</Text><Text>{maxLength}</Text>
                             </View>
                         }
                     </View>
@@ -74,8 +73,8 @@ class Prompt extends Component {
                             operation.length > 0
                             &&
                             operation.map((item, index) => {
-                                return(
-                                    <TouchableOpacity 
+                                return (
+                                    <TouchableOpacity
                                         key={index}
                                         style={[styles.promptAction]}
                                         onPress={() => this.operationPress(item.onPress)}
